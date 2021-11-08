@@ -77,10 +77,3 @@ const solarSystem = [
   
    const translate = solarSystem.map(newNames)
 
-
-
-   
-   
-
-// //   translate(solarSystem,italianNames)
-// const traduction = solarSystem.map(translate)
