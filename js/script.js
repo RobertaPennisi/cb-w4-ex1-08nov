@@ -4,7 +4,7 @@
 function showModal() {
     setTimeout(() => {
        modal.style.display = "block";
-    }, 10000);
+    }, 1000);
 }
 
 function hideModal() {
@@ -17,7 +17,7 @@ const closeBtn = document.querySelector('#btn-accept');
 document.addEventListener("DOMContentLoaded", showModal, {once:true});
 closeBtn.addEventListener('click', hideModal);
 
-//Punto due: 
+//Punto due: funzioni traduzione e calcolo del diametro
 const solarSystem = [
     { name: "Sun", radius: 696340, surface: "star" },
     { name: "Mercury", radius: 2440, surface: "terrestrial" },
@@ -77,3 +77,43 @@ const solarSystem = [
   
    const translate = solarSystem.map(newNames)
 
+//Seconda parte esercizio: le scimmie assassine
+
+function hideAll() {
+    allTheContent.style.opacity = 0;
+    modal.style.display = "none";
+}
+function showPanicModal() {
+    setTimeout(() => {
+        panicModal.style.display = "block";
+     }, 5000);
+}
+function hidePanicModal() {
+    panicModal.style.display = "none";
+}
+
+const printMonkeys = ((container, items) => {
+    const elements = items.map((element) => `<h3>${element.name} ${element.surname} aka ${element.aka}</h3>`);
+    const content = elements.join('');
+    container.innerHTML = content;
+});
+
+function panicOnPage() {
+    hideAll();
+    showPanicModal();
+    setTimeout(() => {
+        hidePanicModal()
+    }, 10000);
+    setTimeout(() => {
+        printMonkeys(showMonkeys,monkeysEquipe);
+    }, 15000);
+}
+
+
+const panicBtn = document.querySelector('#btn-deny');
+const allTheContent = document.querySelector('main');
+const panicModal = document.querySelector("#modal-panic");
+const showMonkeys = document.querySelector('#monkey')
+
+
+panicBtn.addEventListener('click', panicOnPage);
