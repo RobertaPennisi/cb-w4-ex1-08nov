@@ -29,3 +29,58 @@ const solarSystem = [
     { name: "Uranus", radius: 25362, surface: "ice giant" },
     { name: "Neptune", radius: 24622, surface: "ice giant" },
   ];
+
+  const terrestrial = (planets) => planets.surface === "terrestrial";
+  const smallPlanets = (planets) => planets.radius <= 3000;
+  const stars = (planets) => planets.surface === "star";  
+  const planetDiameter = (planets) => planets.radius * 2;
+  //const planetNames = (planets) => planets.name
+  //const translate = (planets, italianNames) => planets.name = italianNames;
+  const italianNames = ["Sole", "Mercurio", "Venere" , "Terra", "Marte", "Giove", "Saturno", "Urano", "Nettuno"];
+
+
+   const diameters = solarSystem.map(planetDiameter);
+
+   const newNames= ((planet) => {
+           switch (planet.name) {
+            case "Sun":
+                planet.name = italianNames[0]
+               break;
+            case "Mercury":
+                planet.name = italianNames[1]
+                break;
+            case "Venus":
+                planet.name = italianNames[2]
+                break;
+            case "Earth":
+                planet.name = italianNames[3]
+                break;
+            case "Mars":
+                planet.name = italianNames[4]
+                break;
+            case "Jupiter":
+                planet.name = italianNames[5]
+                break;
+            case "Saturn":
+                planet.name = italianNames[6]
+                break;
+            case "Uranus":
+                planet.name = italianNames[7]
+                break;
+            case "Neptune":
+                planet.name = italianNames[8]
+                break;
+            
+       }
+       return planet
+   });
+  
+   const translate = solarSystem.map(newNames)
+
+
+
+   
+   
+
+// //   translate(solarSystem,italianNames)
+// const traduction = solarSystem.map(translate)
