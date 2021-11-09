@@ -155,7 +155,7 @@ form.add-new input {
     padding: 10px 30px;
   }
 
-  #monkey{
+  /* #monkey{
     position: fixed; 
     z-index: 1; 
     left: 0;
@@ -163,4 +163,4 @@ form.add-new input {
     width: 100%; 
     height: 100%;
     text-align: center;
-  }
+  } */

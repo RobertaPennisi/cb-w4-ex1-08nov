@@ -4,7 +4,7 @@
 function showModal() {
     setTimeout(() => {
        modal.style.display = "block";
-    }, 1000);
+    }, 10000);
 }
 
 function hideModal() {
